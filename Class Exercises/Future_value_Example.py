@@ -30,5 +30,6 @@ def main():
         print(f"Future value:{lc.currency(calculated_value, grouping=True):>19}")
         loop = input("\ncontinue? (y/n): ")
 
+
 if __name__ == '__main__':
     main()
