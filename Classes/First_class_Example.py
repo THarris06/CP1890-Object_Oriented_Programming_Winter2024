@@ -28,8 +28,8 @@ def main():
         print(f"Price:\t\t\t\t{product_list[product_num].price:.2f}")
         print(f"Discount Percent:\t{product_list[product_num].discount:d}%")
 
-        print(f"Discount Amount:\t{product_list[product_num].getDiscountAmount():.2f}")
-        print(f"Discount Price:\t\t{product_list[product_num].getDiscountPrice():.2f}")
+        print(f"Discount Amount:\t{product_list[product_num].get_discount_amount():.2f}")
+        print(f"Discount Price:\t\t{product_list[product_num].get_discount_price():.2f}")
         loop = str(input("\nView another product? (y/n): ")).lower()
 
 
