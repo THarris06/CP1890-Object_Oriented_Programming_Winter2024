@@ -1,5 +1,5 @@
 
-from dice_roll_program_class_object import Die, Dice
+from encapsulation_die_class_object import Die, Dice
 
 
 def title():
@@ -25,8 +25,8 @@ def main():
         dice.roll_all()
 
         print("YOUR ROLL: ", end="")
-        for die in dice.list_die:
-            print(die.value, end=" ")
+        for die in dice.getlist():
+            print(die.getvalue(), end=" ")
         print()
 
         loop = input("Roll again? (y/n): ").lower()
