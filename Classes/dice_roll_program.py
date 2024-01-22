@@ -10,5 +10,29 @@ def get_die_amount():
     num_dice = int(input("Enter the number of dice to roll: "))
     return num_dice
 
-def get_dice_roll( Dice):
-    roll_result =
+
+def main():
+    title()
+    loop = 'y'
+
+    dice_num = get_die_amount()
+    dice = Dice()
+    for i in range(dice_num):
+        die = Die()
+        dice.add_die(die)
+
+    while loop.lower() == 'y':
+        dice.roll_all()
+
+        print("YOUR ROLL: ", end="")
+        for die in dice.list_die:
+            print(die.value, end=" ")
+        print()
+
+        loop = input("Roll again? (y/n): ").lower()
+
+    print("Bye!")
+
+
+if __name__ == "__main__":
+    main()
