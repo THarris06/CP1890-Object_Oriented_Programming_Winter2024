@@ -29,3 +29,7 @@ class Dice:
     def roll_all(self):
         for die in self.__list_die:
             die.roll()
+
+    @property
+    def list_dice(self) -> list:
+        return tuple(self.__list_die)

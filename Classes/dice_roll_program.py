@@ -25,7 +25,7 @@ def main():
         dice.roll_all()
 
         print("YOUR ROLL: ", end="")
-        for die in dice.getlist():
+        for die in dice.list_dice:
             print(die.getvalue(), end=" ")
         print()
 
