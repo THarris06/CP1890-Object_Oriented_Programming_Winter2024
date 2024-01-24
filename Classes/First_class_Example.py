@@ -1,4 +1,4 @@
-from Class_Objects_1 import product
+from Product_class_program_classes import product
 
 
 product_list = [product("Stanley 13 Ounce Wood Hammer", 12.99, 62),
@@ -26,7 +26,7 @@ def main():
         print("\nPRODUCT DATA")
         print(f"Name:\t\t\t\t{product_list[product_num].name}")
         print(f"Price:\t\t\t\t{product_list[product_num].price:.2f}")
-        print(f"Discount Percent:\t{product_list[product_num].discount:d}%")
+        print(f"Discount Percent:\t{product_list[product_num].discount_percent:d}%")
 
         print(f"Discount Amount:\t{product_list[product_num].get_discount_amount():.2f}")
         print(f"Discount Price:\t\t{product_list[product_num].get_discount_price():.2f}")
