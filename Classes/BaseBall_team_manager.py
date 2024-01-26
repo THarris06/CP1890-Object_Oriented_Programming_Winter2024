@@ -9,9 +9,11 @@ def top_menu():
     print(f"{'BaseBall Team Manager':>50}")
 
     cur_date = datetime.now().date()
-    print("CURRENT DATE:")
+    print(f"CURRENT DATE: {cur_date}")
+    game_date = datetime.fromisoformat(input('GAME DATE: ')).date()
+    until_game = (game_date - cur_date).days
+    print(f"DAYS UNTIL GAME: {until_game}")
 
-    print("DAYS UNTIL GAME: 2")
     print()
     print("1. - Display lineup")
     print("2. - Add player")
@@ -24,3 +26,4 @@ def top_menu():
     print("C, 1B, 2B, 3B, SS, LF, CF, RF, P")
 
 
+top_menu()
