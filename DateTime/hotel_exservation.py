@@ -36,7 +36,6 @@ def get_departure(arrival):
             print('\nInvalid date of departure , Enter a valid date.\n')
             print(f"Error:{ve}\n")
             continue
-        now = datetime.now()
         if departure_date < arrival:
             print("This date has pasted your arrival, date needs to be later then arrival.\n")
         else:
