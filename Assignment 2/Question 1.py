@@ -31,7 +31,6 @@ class Employee(Person):
     Subclass of the Person class that
     adds attribute for employee SSN
     """
-    # might change the __repr__ method to have the dashes
     SSN: str = ""
 
 
@@ -54,8 +53,6 @@ def main():
             user.customer_number = str(input(f"{'Number:':<12}"))
         elif isinstance(user, Employee):
             user.SSN = str(input(f"{'SSN:':<12}"))
-# Might think for a better way for breaking this up later but
-# this works for now however it is chunky.
         if isinstance(user, Customer):
             print("\nCUSTOMER")
             print(f"{'Name:':<12}{user.full_name}")
@@ -75,3 +72,6 @@ def main():
 if __name__ == "__main__":
     main()
     print("\nBye!")
+
+
+
