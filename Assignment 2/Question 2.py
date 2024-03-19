@@ -49,7 +49,7 @@ def main():
               f"Integers:  {int_list}\n"
               f"Count:     {int_list.len}\n"
               f"Total:     {int_list.sum}\n"
-              f"Average:   {int_list.average}\n")
+              f"Average:   {int_list.average}")
 
         if input("\nContinue? (y/n): ").lower() != 'y':
             print("\nBye!")
