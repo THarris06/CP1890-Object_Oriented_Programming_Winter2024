@@ -1,53 +1,60 @@
+# Question 2
 from dataclasses import dataclass
 from random import randint
 
 
 @dataclass
 class RandomIntList(list):
-    """
-    Class to represent a list of random integers.
-    get_count() - returns the length of the list.
-    get_total() - returns the total sum of the numbers in the list.
-    get_avg() - returns the average of the numbers in the list.
-    """
-    num: int
+    __length: int
 
     def __post_init__(self):
-        for num in range(self.num):
-            self.append(randint(0, 100))
+        for num in range(self.__length):
+            self.append(randint(1, 100))
 
     def __str__(self):
-        return ', '.join(map(str, self))
+        return f", ".join([str(num) for num in self])
 
-    def get_count(self):
+    @property
+    def len(self):
         return len(self)
 
-    def get_total(self):
+    @property
+    def sum(self):
         return sum(self)
 
-    def get_avg(self):
-        return sum(self) / len(self)
+    @property
+    def average(self):
+        return f"{sum(self) / self.__length:.3f}"
+
+
+def get_int(message: str) -> int:
+    while True:
+        num = input(message)
+        if num.isnumeric():
+            return int(num)
+        print("Invalid integer. Please try again.")
 
 
 def main():
     print("Random Integer List")
 
-    loop = 'y'
-    num = int(input("\nHow many random integers should the list contain?: "))
+    num = get_int("\nHow many random integers should the list contain?: ")
 
-    while loop.lower() == 'y':
+    while True:
         int_list = RandomIntList(num)
-        print("\nRandom Integers")
-        print("===============")
-        print(f"{'Integers:':<11} {int_list}")
-        print(f"{'Count':<11} {int_list.get_count()}")
-        print(f"{'Total':<11} {int_list.get_total()}")
-        print(f"{'Average':<11} {int_list.get_avg():.3f}")
 
-        loop = input("\nContinue (y/n): ").lower()
+        print(f"\n"
+              f"Random Integers\n"
+              f"===============\n"
+              f"Integers:  {int_list}\n"
+              f"Count:     {int_list.len}\n"
+              f"Total:     {int_list.sum}\n"
+              f"Average:   {int_list.average}")
+
+        if input("\nContinue? (y/n): ").lower() != 'y':
+            print("\nBye!")
+            break
 
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     main()
-    print("\nBye!")
