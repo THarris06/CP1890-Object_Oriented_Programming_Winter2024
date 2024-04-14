@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 from math import sqrt
 
 window = tk.Tk()
@@ -11,10 +11,14 @@ frame.pack(fill="both", expand=True)
 
 
 def clicked_calc_button():
-    a = float(sideA_text.get())
-    b = float(sideB_text.get())
-    c = sqrt(a**2 + b**2)
-    sideC_text.set(str(f"{c:.3f}"))
+    try:
+        a = float(sideA_text.get())
+        b = float(sideB_text.get())
+
+        c = sqrt(a ** 2 + b ** 2)
+        sideC_text.set(str(f"{c:.3f}"))
+    except ValueError:
+        messagebox.showerror("Error")
 
 
 def clicked_exit_button():
