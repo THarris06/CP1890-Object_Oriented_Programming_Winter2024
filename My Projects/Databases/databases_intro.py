@@ -5,9 +5,7 @@ import sqlite3
 conn = sqlite3.connect('guitar_shop.sqlite')
 
 c = conn.cursor()
-query = ('select * from Product '
-         'where listPrice > 1000.00 '
-         'order by listPrice desc')
+query = 'select * from Product '
 c.execute(query)
 rows = c.fetchall()
 conn.close()
