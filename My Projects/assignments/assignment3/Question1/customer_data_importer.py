@@ -15,9 +15,7 @@ c.execute(query)
 conn.commit()
 
 # Program waits for user input before continuing to repopulation
-# This was done so that the database can be checked between deletion and repopulation
 print(f"\nAll old rows deleted from {table_name} table.")
-input("Press Enter to repopulate the database.")
 
 # Repopulates the database from csv file. Count variable to track number of rows
 count = 0
